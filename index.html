@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GoldenAPEye</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body ng-app="myApp" class="ng-cloak">
+    <header>
+        <h1 class="header-title">James Bond Films</h1>
+    </header>
+    
+
+    <div class="container" ng-controller="MyController">
+
+        <div class="film" ng-repeat="film in films">
+            <h2 id="title">{{ film.title }}</h3>
+            <h4 id="year">{{ film.year }}</h4>
+            <p id="stars" ng-repeat="star in film.stars">
+                {{ star }}{{$last ? '' : ', '}}
+            </p>
+            <p id="synopsis">{{ film.synopsis }}</p>
+        </div>
+
+        
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script type="text/javascript">
+        angular.module('myApp', []).controller('MyController', MyController);
+    
+        function MyController($scope, $http){
+
+            $http.get('/bondfilms').then(function(response) {
+                $scope.films = response.data;
+                console.log($scope.films);
+            })
+        }
+    
+    </script>
+</body>
+</html>

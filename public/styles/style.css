@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    background-color: beige;
+    margin-top: 0;
+    overflow: auto;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 900px;
+}
+
+.film {
+    margin: 10px 0;
+    padding: 0 40px;
+    border: 1px solid black; 
+}
+
+.film #stars {
+    display: inline;
+    color: lightslategray;
+    font-style: italic;
+}
