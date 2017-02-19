@@ -1,5 +1,5 @@
 {
-  "name": "Golden APEye",
+  "name": "Golden A-P-Eye",
   "version": "1.0.0",
   "description": "A simple MEAN stack api returning James Bond movie data",
   "main": "server.js",
@@ -10,7 +10,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com:davi3blu3/goldenAPI"
-  }
+  },
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.16.1",
