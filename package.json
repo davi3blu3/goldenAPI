@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "davi3blu3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:davi3blu3/goldenAPI"
+  }
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.16.1",
