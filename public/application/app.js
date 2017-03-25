@@ -5,7 +5,6 @@ myApp.config(function($stateProvider, $urlRouterProvider){
     $stateProvider
         .state('filmlist', {
             url: '/',
-            // component: 'filmlist',
             templateUrl: 'templates/filmlist.html',
             resolve: {
                 films: function(FilmService) {
@@ -15,8 +14,8 @@ myApp.config(function($stateProvider, $urlRouterProvider){
             }
         })
         .state('film', {
-            url: '/film/{filmId}',
-            component: 'film',
+            url: '/film/:filmId',
+            templateUrl: 'templates/film.html',
             resolve: {
                 film: function(FilmService, $transitions$) {
                     console.log('single film called');
