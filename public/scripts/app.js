@@ -1,4 +1,15 @@
-angular.module('myApp', []).controller('MyController', MyController);
+angular.module('myApp', ['ngRoute'])
+
+.config(function($routeProvider){
+    $routeProvider
+    .when('/', {
+        templateUrl: '../templates/filmlist.html',
+        controller: 'MyController'
+    })
+})
+
+
+.controller('MyController', MyController);
 
 function MyController($scope, $http){
 
