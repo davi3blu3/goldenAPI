@@ -1,4 +1,6 @@
-angular.module('myApp').component('film', {
+angular.module('myApp')
+
+.component('film', {
   bindings: { film: '<' },
   template: '<h3>A film!</h3>' +
   

@@ -1,6 +1,6 @@
-angular.module('myApp', ['ui.router'])
+var myApp = angular.module('myApp', ['ui.router']);
 
-.config(function($stateProvider, $urlRouterProvider){
+myApp.config(function($stateProvider, $urlRouterProvider){
 
     $urlRouterProvider.otherwise('/filmlist');
 

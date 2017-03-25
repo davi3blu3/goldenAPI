@@ -1,8 +1,10 @@
-angular.module('myApp').component('filmlist', {
+angular.module('myApp')
+
+.component('filmlist', {
     bindings: {filmlist: '<'},
 
     template:   '<div class="film">' +
-                '   <h2>title, boo</h2>' +
+                '   <h2>Render something, dammit!</h2>' +
                 '</div'
 })
 
