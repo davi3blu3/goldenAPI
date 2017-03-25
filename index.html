@@ -27,17 +27,6 @@
     </div>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
-    <script type="text/javascript">
-        angular.module('myApp', []).controller('MyController', MyController);
-    
-        function MyController($scope, $http){
-
-            $http.get('/bondfilms').then(function(response) {
-                $scope.films = response.data;
-                console.log($scope.films);
-            })
-        }
-    
-    </script>
+    <script type="text/javascript" src="scripts/app.js"></script>
 </body>
 </html>
