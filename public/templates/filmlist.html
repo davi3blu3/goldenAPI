@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div ng-repeat="film in films">
+    <div ng-repeat="film in $resolve.films">
         <a ng-href="/{{ film._id }}">
             <div class="film">
                 <h2 id="title">{{ film.title }}</h3>
