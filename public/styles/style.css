@@ -16,8 +16,11 @@ header {
 
 .container {
     margin: 0 auto;
-    width: 80%;
-    max-width: 900px;
+    width: 95%;
+}
+
+.ng-cloak {
+    display: none !important;
 }
 
 .film {
@@ -34,7 +37,6 @@ header {
     transition: all 100ms ease-in;
     transform: scale(1);
 }
-
 .film:hover {
     box-shadow: 0px 0px 25px #000000;
     -webkit-transition: all 100ms ease-in;
@@ -46,15 +48,13 @@ header {
     transition: all 100ms ease-in;
     transform: scale(1.01);
 }
-
 .film #title {
     float: left;
+    max-width: 60%;
 }
-
 .film #year {
     float: right;
 }
-
 .film #stars {
     clear: both;
 }
@@ -64,5 +64,15 @@ header {
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
     font-style: italic;
-    margin-right: 4px;
+    margin: 0 4px;
+}
+.film #synopsis {
+    font-weight: 400;
+}
+
+@media (min-width: 600px) {
+    .container {
+        width: 85%;
+        max-width: 900px;
+    }
 }

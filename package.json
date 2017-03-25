@@ -1,6 +1,6 @@
 {
-  "name": "Golden A-P-Eye",
-  "version": "1.0.0",
+  "name": "GoldenAPI",
+  "version": "1.0.1",
   "description": "A simple MEAN stack api returning James Bond movie data",
   "main": "server.js",
   "scripts": {
