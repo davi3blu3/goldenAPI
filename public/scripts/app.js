@@ -1,20 +1,33 @@
-angular.module('myApp', ['ngRoute'])
+angular.module('myApp', ['ui.router'])
 
-.config(function($routeProvider){
-    $routeProvider
-    .when('/', {
-        templateUrl: '../templates/filmlist.html',
-        controller: 'MyController'
+.config(function($stateProvider, $urlRouterProvider){
+
+    $urlRouterProvider.otherwise('/films');
+
+    var states = [
+        {
+            name: 'films',
+            url: '/films',
+            component: 'filmlist',
+            resolve: {
+                films: function(FilmService) {
+                    return FilmService.getAllFilms();
+                }
+            }
+        },
+        {
+            name: 'film',
+            url: '/film/{filmId}',
+            component: 'film',
+            resolve: {
+                film: function(FilmService, $transitions$) {
+                    return FilmService.getFilm($transition$.params().filmId);
+                }
+            }
+        }
+    ];
+
+    states.forEach(function(state) {
+        $stateProvider.state(state);
     })
 })
-.controller('MyController', MyController);
-
-
-function MyController($scope, $http){
-
-    // RETRIEVE ALL FILMS FROM DB
-    $http.get('/bondfilms').then(function(response) {
-        $scope.films = response.data;
-        console.log($scope.films);
-    })
-}
