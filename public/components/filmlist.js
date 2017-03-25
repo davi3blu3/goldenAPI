@@ -1,7 +1,7 @@
 angular.module('myApp')
 
 .component('filmlist', {
-    bindings: {filmlist: '<'},
+    // bindings: {filmlist: '<'},
 
     template:   '<div class="film">' +
                 '   <h2>Render something, dammit!</h2>' +

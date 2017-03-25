@@ -11,6 +11,7 @@ myApp.config(function($stateProvider, $urlRouterProvider){
             component: 'filmlist',
             resolve: {
                 films: function(FilmService) {
+                    console.log('FilmService called');
                     return FilmService.getAllFilms();
                 }
             }
@@ -29,5 +30,6 @@ myApp.config(function($stateProvider, $urlRouterProvider){
 
     states.forEach(function(state) {
         $stateProvider.state(state);
+        console.log('registered ', state);
     })
 })
