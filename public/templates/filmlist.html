@@ -1,7 +1,7 @@
 <div class="container">
 
     <div ng-repeat="film in $resolve.films">
-        <a ui-sref="film({ filmId: {{film._id}} })">
+        <a ui-sref="film({ filmId: film._id })">
             <div class="film">
                 <h2 id="title">{{ film.title }}</h3>
                 <h3 id="year">{{ film.year }}</h3>
