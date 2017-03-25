@@ -2,12 +2,12 @@ angular.module('myApp', ['ui.router'])
 
 .config(function($stateProvider, $urlRouterProvider){
 
-    $urlRouterProvider.otherwise('/films');
+    $urlRouterProvider.otherwise('/filmlist');
 
     var states = [
         {
-            name: 'films',
-            url: '/films',
+            name: 'filmlist',
+            url: '/filmlist',
             component: 'filmlist',
             resolve: {
                 films: function(FilmService) {
