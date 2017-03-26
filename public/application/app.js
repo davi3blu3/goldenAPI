@@ -17,8 +17,9 @@ myApp.config(function($stateProvider, $urlRouterProvider){
             url: '/film/:filmId',
             templateUrl: 'templates/film.html',
             resolve: {
-                film: function($stateParams) {
-                    return $stateParams.filmId;
+                film: function(FilmService, $stateParams) {
+                    // return $stateParams.filmId;
+                    return FilmService.getFilm($stateParams.filmId);
                 }
             }
             // resolve: {
