@@ -9,7 +9,8 @@ var local_mongo = 'mongodb://localhost:27017/' + dbName;
 
 // Express server setup
 var app = express();
-app.use(express.static(__dirname + "/public"));
+app.use('/modules', express.static(__dirname + '/node_modules') )
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
 // Initiate database connection
