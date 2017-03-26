@@ -15,14 +15,15 @@ myApp.config(function($stateProvider, $urlRouterProvider){
         })
         .state('film', {
             url: '/film/:filmId',
-            templateUrl: 'templates/film.html',
-            resolve: {
-                film: function(FilmService, $transitions$) {
-                    console.log('single film called');
-                    return FilmService.getFilm($transition$.params().filmId);
-                }
-            }
+            templateUrl: 'templates/film.html'
+            // ,
+            // resolve: {
+            //     film: function(FilmService, $transitions$) {
+            //         console.log('single film called');
+            //         return FilmService.getFilm($transition$.params().filmId);
+            //     }
+            // }
         });
 
-    // $urlRouterProvider.otherwise('/');    
+    $urlRouterProvider.otherwise('/');    
 })
