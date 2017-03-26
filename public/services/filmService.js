@@ -10,12 +10,18 @@ angular.module('myApp')
         },
 
         getFilm: function(id) {
-            function filmMatchesParam(film) {
-                return film.id === id;
-            }
-            return service.getAllFilms().then(function (film) {
-                return film.find(filmMatchesParam)
-            });
+            console.log('FilmService.getFilm called!');
+            return $http.get('/bondfilms/' + id, { cache: true }).then(function(response) {
+                console.log(response.data);
+                return response.data;
+            })
+
+            // function filmMatchesParam(film) {
+            //     return film.id === id;
+            // }
+            // return service.getAllFilms().then(function (film) {
+            //     return film.find(filmMatchesParam)
+            // });
         }
     }
 

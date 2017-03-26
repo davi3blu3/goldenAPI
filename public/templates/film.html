@@ -1,7 +1,20 @@
 <div class="container">
 
-    <h1>H3llo W0rld</h1>
+    <div class="film">
 
-    <h2>FILM: {{ $resolve.title }}</h2>
-    
+    <h2>FILM SELECTED: {{ $resolve.film.title }}</h2>
+
+    <h3>IMDB number: {{ $resolve.film.imdb }}</h3>
+
+    <h3>{{ $resolve.film.year}}</h3>
+
+    <ul id="star" ng-repeat="star in $resolve.film.stars">
+        <li>{{ star }}</li>
+    </ul>
+
+    <p>{{$resolve.film.synopsis}}</p>
+
+    <h4>Theme Song: <strong>{{ $resolve.film.theme.title }}</strong>, {{ $resolve.film.theme.artist }}</h4>
+
+    </div>
 </div>

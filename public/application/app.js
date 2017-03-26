@@ -17,11 +17,17 @@ myApp.config(function($stateProvider, $urlRouterProvider){
             url: '/film/:filmId',
             templateUrl: 'templates/film.html',
             resolve: {
-                film: function(FilmService, $transitions$) {
-                    console.log('single film called');
-                    return FilmService.getFilm($transition$.params().filmId);
+                film: function(FilmService, $stateParams) {
+                    // return $stateParams.filmId;
+                    return FilmService.getFilm($stateParams.filmId);
                 }
             }
+            // resolve: {
+            //     film: function(FilmService, $transitions$) {
+            //         console.log('single film called');
+            //         return FilmService.getFilm($transition$.params().filmId);
+            //     }
+            // }
         });
 
     $urlRouterProvider.otherwise('/');    
