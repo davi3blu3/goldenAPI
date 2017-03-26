@@ -15,8 +15,12 @@ myApp.config(function($stateProvider, $urlRouterProvider){
         })
         .state('film', {
             url: '/film/:filmId',
-            templateUrl: 'templates/film.html'
-            // ,
+            templateUrl: 'templates/film.html',
+            resolve: {
+                film: function($stateParams) {
+                    return $stateParams.filmId;
+                }
+            }
             // resolve: {
             //     film: function(FilmService, $transitions$) {
             //         console.log('single film called');
