@@ -47,13 +47,12 @@ MongoClient.connect(local_mongo, function(err, database){
     // Handle GET request /bondfilms/:filmId - get one film's data
     app.get("/bondfilms/:id", function(req, res) {
         console.log('Get request received with param:', req.params.id);
-        res.status(200).send();
+        // res.status(200).send();
         database.collection('goldenAPI').findOne({_id: new ObjectId(req.params.id)}, function(err, doc) {
             if (err) {
                 console.log('failed to get film data:', err.message);
             } else {
-                console.log('db found:', doc);
-                res.status(200);
+                res.status(200).json(doc);
             }
         })
     })
