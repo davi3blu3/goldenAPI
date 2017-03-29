@@ -1,5 +1,4 @@
 <div class="container">
-    
     <div ng-repeat="film in $resolve.films">
         <a ui-sref="film({ filmId: film._id })">
             
@@ -12,8 +11,7 @@
                 <p id="synopsis">{{ film.synopsis }}</p>
             </div>
         </a>
-
     </div>
 
-    
+    <div class="btn btn-primary pull-right">New</div>
 </div>
