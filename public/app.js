@@ -22,12 +22,10 @@ myApp.config(function($stateProvider, $urlRouterProvider){
                     return FilmService.getFilm($stateParams.filmId);
                 }
             }
-            // resolve: {
-            //     film: function(FilmService, $transitions$) {
-            //         console.log('single film called');
-            //         return FilmService.getFilm($transition$.params().filmId);
-            //     }
-            // }
+        })
+        .state('newfilm', {
+            url: '/newfilm',
+            templateUrl: 'templates/newfilm.html'
         });
 
     $urlRouterProvider.otherwise('/');    
